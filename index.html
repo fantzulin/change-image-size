@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>change_size</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mb-3 d-flex justify-content-center">
+            <!-- 縮放用的照片 -->
+            <img src="https://i.imgur.com/AD3MbBi.jpeg" alt="cat" id="img">
+        </div>
+        <div class="mb-3">
+            <!-- 輸入寬度數值用 -->
+            <input type="number" class="form-control" id="size" value="504" min="100" max="1000" step="100">
+        </div>
+        <div class="mb-3">
+            <!-- 拖曳用的 bar -->
+            <input type="range" class="form-range" id="size_range" value="504" min="100" max="1000" step="100">
+        </div>
+        <div class="mb-3">
+            <!-- 點擊用的 button -->
+            <button type="button" class="btn btn-primary" id="size_btn_add" onclick="change_size(this)">+</button>
+            <button type="button" class="btn btn-primary" id="size_btn_minus" onclick="change_size(this)">-</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="change_size.js"></script>
+    <script>
+        change_size({
+            domid: "size",
+            addid: "",
+            minusid: "",
+            type: "number",
+            imgid: "img",
+            min: 100,
+            max: 1000,
+            step: 100
+        })
+        change_size({
+            domid: "size_range",
+            addid: "",
+            minusid: "",
+            type: "range",
+            imgid: "img",
+            min: 100,
+            max: 1000,
+            step: 100
+        })
+        change_size({
+            domid: "",
+            addid: "size_btn_add",
+            minusid: "size_btn_minus",
+            type: "button",
+            imgid: "img",
+            min: 100,
+            max: 1000,
+            step: 100
+        })
+        change_size({
+            domid: "img",
+            addid: "",
+            minusid: "",
+            type: "wheel",
+            imgid: "img",
+            min: 100,
+            max: 1000,
+            step: 100
+        })
+    </script>
+</body>
+</html>
